@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Hostel Finder</h1>
+        <p>Find the best hostels in your city with ease</p>
+    </header>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <button class="btn" onclick="login()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="register-container" style="display: none;">
+        <h2>Register</h2>
+        <input type="text" id="register-email" placeholder="Email">
+        <input type="password" id="register-password" placeholder="Password">
+        <button class="btn" onclick="register()">Register</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+
+    <!-- Hostels List -->
+    <div class="hostel-list">
+        <h2>Available Hostels</h2>
+        <ul id="hostelList">
+            <!-- Hostel items will be populated here dynamically -->
+        </ul>
+    </div>
+
+    <!-- Google Maps Container -->
+    <div id="map"></div>
+
+    <!-- Hostel Details Modal -->
+    <div id="hostelDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="hostelName"></h3>
+            <p><strong>Amenities:</strong> <span id="amenities"></span></p>
+            <p><strong>Food Menu:</strong> <span id="foodMenu"></span></p>
+            <p><strong>Room Fees:</strong></p>
+            <ul>
+                <li>Single: <span id="singleRoomFee"></span></li>
+                <li>Double: <span id="doubleRoomFee"></span></li>
+                <li>Triple: <span id="tripleRoomFee"></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <!-- Add Google Maps API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
